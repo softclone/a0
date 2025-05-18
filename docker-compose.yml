@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  agent-zero:
+    build:
+      context: .
+      args:
+        BRANCH: main
+    container_name: agent-zero
+    volumes:
+      - C:/a0:/a0
+    ports:
+      - "22:22"
+      - "80:80"
+    restart: unless-stopped
