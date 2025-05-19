@@ -1,14 +1,8 @@
-version: "3.8"
 services:
   agent-zero:
-    build:
-      context: .
-      args:
-        BRANCH: main
     container_name: agent-zero
+    image: frdel/agent-zero-run:testing
     volumes:
-      - C:/a0:/a0
+      - ./agent-zero:/a0
     ports:
-      - "22:22"
-      - "80:80"
-    restart: unless-stopped
+      - "50080:80"
